@@ -41,29 +41,34 @@
       pkgs.home-manager
       pkgs.obsidian
       pkgs.syncthing
-#      pkgs.syncthingtray
       pkgs.python311
-#      pkgs._1password-gui-beta
+      # pkgs.unstable._1password-gui
+      # pkgs.unstable._1password
       pkgs.chromium
-#      pkgs.nerdfonts
     ];
   };
+
   programs = {
     vscode = {
       enable = true;
       package = pkgs.unstable.vscode;
       userSettings = {
-      "window.titleBarStyle" = "custom";
-      "files.autoSave" = "afterDelay";
-      "workbench.colorTheme" = "Gruvbox Dark Soft";
+        "window.titleBarStyle" = "custom";
+        "files.autoSave" = "afterDelay";
+        "workbench.colorTheme" = "Gruvbox Dark Soft";
       };
     };
+    # _1password.enable = {
+    #   package = pkgs.unstable._1password;
+    #   enable = true;
+    # };
+    # _1password-gui = {
+    #   enable = true;
+    #   polkitPolicyOwners = [ "marcus" ];
+    #   package = pkgs.unstable._1password-gui;
+    # };
   };
 
-  # fonts.packages = with pkgs; [
-  #   noto-fonts
-  #   nerdfonts
-  # ];
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
