@@ -70,10 +70,6 @@
   environment.sessionVariables = {
     # vscode on wayland
     NIXOS_OZONE_WL = "1";
-    # Some firefox wayland vars
-    MOZ_ENABLE_WAYLAND = "1";
-    MOZ_USE_XINPUT2 = "1";
-   # XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
   };
 
   services.printing.enable = true;

@@ -1,19 +1,16 @@
 { inputs, config, pkgs, lib, buildFirefoxXpiAddon, ... }:
 
 let
-  # myconfig = ''
-  #   user_pref("keyword.enabled", true);
-  #   user_pref("privacy.clearOnShutdown.cookies", false);
-  #   user_pref("privacy.clearOnShutdown.history", false);
-  #   user_pref("webgl.disabled", false);
-
-  #   user_pref("media.ffmpeg.vaapi.enabled", true);
-  #   user_pref("media.ffvpx.enabled", false);
-  #   user_pref("media.rdd-vpx.enabled", false);
-  #   user_pref("media.navigator.mediadatadecoder_vpx_enabled", true);
-
-  #   user_pref("gfx.webrender.all", true);
-  # '';
+  myconfig = ''
+    user_pref("browser.firefox-view.feature-tour",{"message":"FIREFOX_VIEW_FEATURE_TOUR","screen":"","complete":true});
+    user_pref("browser.urlbar.sponsoredTopSites",false);
+    user_pref("extensions.formautofill.creditCards.enabled",false);
+    user_pref("extensions.pocket.enabled",false);
+    user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites",false);
+    user_pref("browser.shell.checkDefaultBrowser",false);
+    user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned","");
+    user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket",false);
+  '';
   firefox-package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
     extraNativeMessagingHosts = [ (pkgs.callPackage ./firefox-profile-switcher-connector.nix { }) ];
     extraPolicies = { ExtensionSettings = { }; };
@@ -33,14 +30,17 @@ in {
           default = "DuckDuckGo";
           force = true;
         };
+        extraConfig = myconfig;
       };
       Work = {
         id = 1;
         isDefault = false;
+        extraConfig = myconfig;
       };
       Support-User = {
         id = 2;
         isDefault = false;
+        extraConfig = myconfig;
       };
       #extensions = builtins.attrValues addons;
     };

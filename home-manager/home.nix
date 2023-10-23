@@ -61,6 +61,9 @@
         "explorer.confirmDelete" = "false";
         "explorer.confirmDragAndDrop" = "false";
       };
+      # environmentVariables.sessionVariables = {
+      #   NIXOS_OZONE_WL = "1";
+      # };
     };
     # _1password.enable = {
     #   package = pkgs.unstable._1password;
