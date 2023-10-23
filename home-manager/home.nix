@@ -56,6 +56,10 @@
         "window.titleBarStyle" = "custom";
         "files.autoSave" = "afterDelay";
         "workbench.colorTheme" = "Gruvbox Dark Soft";
+        "git.autofetch" = "true";
+        "git.confirmSync" = "true";
+        "explorer.confirmDelete" = "false";
+        "explorer.confirmDragAndDrop" = "false";
       };
     };
     # _1password.enable = {
