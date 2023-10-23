@@ -41,10 +41,11 @@
       pkgs.home-manager
       pkgs.obsidian
       pkgs.syncthing
-      pkgs.syncthingtray
+#      pkgs.syncthingtray
       pkgs.python311
+#      pkgs._1password-gui-beta
       pkgs.chromium
-      pkgs.nerdfonts
+#      pkgs.nerdfonts
     ];
   };
   programs = {
