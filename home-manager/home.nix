@@ -8,6 +8,8 @@
 }: {
   imports = [
     ../modules/firefox/default.nix
+    ../modules/syncthing.nix
+    #../home-manager/modules
   ];
 
   nixpkgs = {
@@ -34,12 +36,14 @@
       pkgs.slack
       pkgs.yakuake
       pkgs.authy
+      pkgs.dig
       pkgs.thunderbird
       pkgs.protonmail-bridge
       pkgs.tailscale
       pkgs.git
       pkgs.home-manager
-      pkgs.obsidian
+      pkgs.mosh
+      #pkgs.obsidian
       pkgs.syncthing
       pkgs.python311
       # pkgs.unstable._1password-gui
@@ -56,10 +60,10 @@
         "window.titleBarStyle" = "custom";
         "files.autoSave" = "afterDelay";
         "workbench.colorTheme" = "Gruvbox Dark Soft";
-        "git.autofetch" = "true";
-        "git.confirmSync" = "true";
-        "explorer.confirmDelete" = "false";
-        "explorer.confirmDragAndDrop" = "false";
+        "git.autofetch" = true;
+        "git.confirmSync" = true;
+        "explorer.confirmDelete" = false;
+        "explorer.confirmDragAndDrop" = false;
       };
       # environmentVariables.sessionVariables = {
       #   NIXOS_OZONE_WL = "1";
