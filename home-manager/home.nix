@@ -63,7 +63,7 @@
       "files.autoSave" = "afterDelay";
       "workbench.colorTheme" = "Catppuccin Mocha";
       "git.autofetch" = true;
-      "git.confirmSync" = true;
+      "git.confirmSync" = false;
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;
       };
