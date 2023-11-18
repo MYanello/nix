@@ -89,6 +89,7 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
+    gcc
     nerdfonts
   ];
 
