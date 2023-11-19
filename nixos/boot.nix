@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   boot = {
-    supportFilesystems = [ "ntfs" ];
+    supportedFilesystems = [ "ntfs" ];
     loader = {
       systemd-boot.enable = false;
       grub = {
