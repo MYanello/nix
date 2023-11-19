@@ -44,9 +44,10 @@
       pkgs.git
       pkgs.home-manager
       pkgs.mosh
-      pkgs.unstable.obsidian
+      #pkgs.unstable.obsidian
       pkgs.syncthing
       pkgs.python311
+      pkgs.python311Packages.pip
       pkgs.chromium
       pkgs.byobu
       pkgs.remmina
@@ -82,7 +83,7 @@
     #   package = pkgs.unstable._1password-gui;
     # };
   };
-
+  
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
